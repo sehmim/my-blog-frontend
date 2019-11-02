@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-
+import { config } from "dotenv";
 
 // axios
 import axios from "axios";
@@ -17,7 +17,6 @@ export default class Landingpage extends Component {
 
     constructor(props) {
         super(props)
-
         this.state = {
             isLoading: false,
             response: [
@@ -33,7 +32,7 @@ export default class Landingpage extends Component {
     };
 
     componentDidMount() {
-        getAPI('http://localhost:1337/blogs')
+        getAPI(process.env.REACT_APP_API_URL)
             .then(response => {
                 this.setState({
                     isLoading: false,
