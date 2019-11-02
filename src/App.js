@@ -1,24 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Landingpage from './pages/Landingpage';
+import BlogViewPage from "../src/pages/BlogViewPage";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
 
 function App() {
+  // let match = useRouteMatch();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <div>
+          <Switch>
+
+            <Route exact path="/">
+              <Landingpage />
+            </Route>
+
+            <Route path={`/blogs/:id`} component={BlogViewPage} ></Route>
+
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
