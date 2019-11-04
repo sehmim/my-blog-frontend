@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { useParams } from "react-router-dom";
-import { getAPI, NavBar } from "../pages/Landingpage";
+import { getAPI, NavBar } from "./BlogPage";
 import { Card, Typography } from '@material-ui/core';
 // export default function BlogViewPage() {
 
@@ -42,27 +42,32 @@ export default class BlogViewPage extends Component {
         console.log(this.state.response)
         return (
             <div >
-                {NavBar("Back")}
-                < Card style={cardBody} >
+                {NavBar(NavBarLinks, false)}
+                < div style={cardBody} >
                     <Typography variant="h2" > {this.state.response.title} </Typography>
+                    <br></br>
                     <hr></hr>
-                    <Typography align="left" variant="caption" > {this.state.response.date.substring(0, 10)} </Typography>
-                    <h3>{this.state.response.body}</h3>
+                    <Typography align="left" variant="caption" > {this.state.response.created_at.substring(0, 10)} </Typography>
+                    <br></br>
+                    <br></br>
+                    <Typography variant="body1" > {this.state.response.body} </Typography>
+                    <br></br>
+                    <br></br>
                     <img style={IMG_STYLE} src={this.state.response.media_url}></img>
-                </Card >
+                </div >
             </div >
         )
     }
 }
 const cardBody = {
-    minWidth: '75vw',
-    // maxWidth: '240px',
-    border: '2px solid #888888',
     padding: '15px',
-    boxShadow: '5px 10px #888888',
     margin: '20px',
 }
 
 const IMG_STYLE = {
     maxWidth: '300px'
 }
+
+const NavBarLinks = [
+    { title: "Back", route: "/blogs" }
+]
