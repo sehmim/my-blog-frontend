@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
 
-import { useParams } from "react-router-dom";
 import { getAPI, NavBar } from "./BlogPage";
-import { Card, Typography } from '@material-ui/core';
-// export default function BlogViewPage() {
-
-//     getAPI('http://localhost:1337/blogs' + id)
-
-// }
+import { Typography } from '@material-ui/core';
 
 
 export default class BlogViewPage extends Component {
@@ -30,7 +24,7 @@ export default class BlogViewPage extends Component {
     componentDidMount() {
 
         const { match: { params } } = this.props;
-        getAPI(`http://localhost:1337/blogs/${params.id}`)
+        getAPI(process.env.REACT_APP_API_URL + `/blogs/${params.id}`)
             .then(response => {
                 this.setState({
                     response: response.data

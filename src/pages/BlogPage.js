@@ -84,7 +84,7 @@ const NavBarLinks = [
 const BlogPageContainer = (data) => {
     return (
         <div>
-            {NavBar(NavBarLinks, false)}
+            {NavBar(NavBarLinks, true)}
             <Grid container
                 direction="column"
                 justify="center"
@@ -127,7 +127,7 @@ export const NavBar = (navLinks, isSearch) => {
                     </Toolbar>
                     {
                         <Toolbar style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                            {
+                            {/* {
                                 navLinks.map((item, index) => {
                                     return (
                                         <Typography variant="h4" >
@@ -135,12 +135,12 @@ export const NavBar = (navLinks, isSearch) => {
                                         </Typography>
                                     )
                                 })
-                            }
+                            } */}
                             {
                                 isSearch ? <span>
                                     {/* <SearchIcon /> */}
                                     <InputBase
-                                        style={{ color: 'white', fontSize: '30px', border: '0' }}
+                                        style={{ color: 'white', fontSize: '20px', border: '0' }}
                                         placeholder="Search…"
                                         inputProps={{ 'aria-label': 'search' }}
                                     />
