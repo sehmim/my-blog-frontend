@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavBar } from '../pages/BlogPage'
+import { NavBar } from '../components/NavBar'
 import { Grid, Typography, TextField, Button } from '@material-ui/core';
 import { Redirect } from 'react-router-dom';
 

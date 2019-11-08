@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 
-import { getAPI, NavBar } from "./BlogPage";
+import { getAPI } from "./BlogPage";
 import { Typography } from '@material-ui/core';
+import { NavBar } from '../components/NavBar'
 
 
 export default class BlogViewPage extends Component {
