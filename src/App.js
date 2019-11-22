@@ -1,21 +1,19 @@
 import React from 'react';
 import './App.css';
-import BlogPage from './pages/BlogPage';
-import BlogViewPage from "../src/pages/BlogViewPage";
 
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
+  Route
 } from "react-router-dom";
+
+// Components
+import BlogPage from './pages/BlogPage';
+import BlogViewPage from "../src/pages/BlogViewPage";
 import Form from './components/Form';
 import LandingPage from './pages/LandingPage';
 
 function App() {
-  // let match = useRouteMatch();
   return (
     <div className="App">
       <Router>
@@ -26,7 +24,7 @@ function App() {
               <LandingPage />
             </Route>
 
-            <Route exact path="/blogs">
+            <Route path="/blogs">
               <BlogPage />
             </Route>
 

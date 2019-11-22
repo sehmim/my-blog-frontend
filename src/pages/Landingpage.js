@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { NavBar } from '../components/NavBar'
 import { Footer } from '../components/Footer'
 
-
 import { Typography, Card } from '@material-ui/core';
 
 //assets
@@ -12,9 +11,7 @@ export default class LandingPage extends Component {
 
     render() {
         const NavBarItems = [
-            { title: "Blogs", route: "/blogs" },
-            { title: "Experience", route: "/blogs" },
-            { title: "Projects", route: "/blogs" }
+            { title: "Blogs", route: "/blogs" }
         ]
         return (
             <div>
@@ -26,6 +23,7 @@ export default class LandingPage extends Component {
     }
 }
 
+const IMG = "https://www.seoclerk.com/pics/3281-1.jpg"
 
 const landingPageScope = () => {
     return (
@@ -33,7 +31,7 @@ const landingPageScope = () => {
             <div style={wrapperEach}>
                 <br></br>
                 <Typography variant="h2" > Sehmim Al </Typography>
-                <br></br>
+                <br></br>                <br></br>
                 <Typography variant="body2" > {BODYTEXT1} </Typography>
                 <Typography variant="body2" > {BODYTEXT2} </Typography>
                 <Typography variant="body2" > {BODYTEXT3} </Typography>
@@ -64,7 +62,7 @@ const landingPageScope = () => {
 
             </div>
             <div style={wrapperEach2}>
-                <img style={{ width: '25vw', borderRadius: '50%' }} src="https://media.licdn.com/dms/image/C5603AQGz97D42EumHw/profile-displayphoto-shrink_200_200/0?e=1578528000&v=beta&t=j9v5A-Wn-ZdGGTszIQZqL4io4d-5a5PlmK_yx9cCcWY"></img>
+                <img style={{ width: '25vw', borderRadius: '50%' }} src={IMG}></img>
             </div>
         </Card >
     )

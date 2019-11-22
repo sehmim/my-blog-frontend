@@ -56,12 +56,6 @@ export async function getAPI(apiRoute) {
     let data;
     try {
         data = await axios.get((apiRoute)
-            // , {
-            //     auth: {
-            //         username: process.env.REACT_APP_USERNAME,
-            //         password: process.env.REACT_APP_PASSWORD
-            //     }
-            // }
         );
     } catch (error) {
         data = error
